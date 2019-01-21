@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-item">
+  <div class="tab-item" @click="menuSelected">
     <svg class="icon svg-icon" aria-hidden="true">
       <use xlink:href="#icon-fuzifutie"></use>
     </svg>
@@ -27,6 +27,10 @@ export default class TabItem extends Vue {
     // console.log('打印：')
     // console.log(this.$props)
     this.menuInfo = this.$props.menuItem
+  }
+
+  menuSelected() {
+    console.log('dddd')
   }
 }
 </script>
