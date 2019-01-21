@@ -6,6 +6,7 @@ import cart, { State as CardState } from './modules/cart'
 import products, { State as ProductsState } from './modules/products'
 import appStateInfo, { State as AppStateInfo } from './modules/appStateInfo'
 import user, { State as UserInfo } from './modules/user'
+import chat, { State as ChatState } from './modules/Chat'
 
 Vue.use(Vuex)
 
@@ -17,7 +18,8 @@ export default new Vuex.Store({
     products,
     appStateInfo,
     user,
-  },
+    chat
+  }
 })
 
 export interface ActionContextBasic {
@@ -30,6 +32,7 @@ export interface State {
   products: ProductsState
   appStateInfo: AppStateInfo
   user: UserInfo
+  chat: ChatState
 }
 
 export type CheckoutStatus = 'successful' | 'failed' | null
@@ -63,4 +66,26 @@ export interface UserInfo {
   objectId: string
   createAt: Date
   updateAt: Date
+}
+
+export interface path {
+  path: string
+}
+
+export interface hint {
+  type: string
+  count: number
+}
+
+export interface menuActiveItem {
+  text: string
+  index: number
+}
+
+export interface NavMenuItem {
+  index: number
+  path: path
+  hint: hint
+  iconClass: string
+  text: string
 }

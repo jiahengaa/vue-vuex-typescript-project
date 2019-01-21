@@ -5,20 +5,19 @@
       <i>Please add some products to cart.</i>
     </p>
     <ul>
-      <li v-for="p in products" :key="p.id">
-        {{ p.title }} - {{ p.price | currency }} x {{ p.quantity }}
-      </li>
+      <li
+        v-for="p in products"
+        :key="p.id"
+      >{{ p.title }} - {{ p.price | currency }} x {{ p.quantity }}</li>
     </ul>
     <p>Total: {{ total | currency }}</p>
     <p>
-      <el-button type="primary" :disabled="!products.length" @click="checkout(products)">
-        Checkout
-      </el-button>
+      <el-button type="primary" :disabled="!products.length" @click="checkout(products)">Checkout</el-button>
     </p>
     <p v-show="checkoutStatus">
-      <el-tag :type="checkoutStatus === 'successful' ? 'success' : 'danger'">
-        Checkout {{ checkoutStatus }}.
-      </el-tag>
+      <el-tag
+        :type="checkoutStatus === 'successful' ? 'success' : 'danger'"
+      >Checkout {{ checkoutStatus }}.</el-tag>
     </p>
   </div>
 </template>

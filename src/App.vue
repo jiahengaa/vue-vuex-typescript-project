@@ -12,4 +12,7 @@
   fill: currentColor;
   overflow: hidden;
 }
+body {
+  margin: 0px;
+}
 </style>
