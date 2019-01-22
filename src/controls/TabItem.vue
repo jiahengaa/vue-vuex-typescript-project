@@ -37,7 +37,6 @@ export default class TabItem extends Vue {
   @Getter('getSelectedMenu') public getSelectedMenu?: any
 
   menuSelected() {
-    console.log('dddd')
     this.selectedMenu(this.menuInfo)
   }
 }
@@ -49,6 +48,7 @@ export default class TabItem extends Vue {
   color: black;
   height: 100%;
   width: 100%;
+  box-shadow: darkcyan 3px 0px 11px 1px;
   &.active {
     background: lightcoral;
   }

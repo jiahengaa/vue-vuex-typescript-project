@@ -1,11 +1,5 @@
 <template>
   <div class="tab-control">
-    <div class="tab-menu">
-      <div class="tab-item-content" v-for="item in menus" :key="item.index">
-        <tab-item :menu-item="item" :v-bind="item.index"></tab-item>
-      </div>
-    </div>
-
     <div class="tab-content">
       <div
         class="tab-content-main"
@@ -14,6 +8,12 @@
         :class="{active:(item.index == curSelectedItem.index)}"
       >
         <tab-content :menu-item="item" :v-bind="item.index"></tab-content>
+      </div>
+    </div>
+
+    <div class="tab-menu">
+      <div class="tab-item-content" v-for="item in menus" :key="item.index">
+        <tab-item :menu-item="item" :v-bind="item.index"></tab-item>
       </div>
     </div>
   </div>
@@ -68,7 +68,6 @@ export default class TabControl extends Vue {
     display: flex;
     height: 100px;
     margin: 0px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     .tab-item-content {
       flex: 1;
       text-align: center;
@@ -81,7 +80,7 @@ export default class TabControl extends Vue {
 
   .tab-content {
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 100px);
     .tab-content-main {
       width: 100%;
       height: 100%;

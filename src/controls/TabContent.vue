@@ -41,7 +41,7 @@ export default class TabContent extends Vue {
 <style lang="scss" scoped>
 .tab-content {
   text-align: center;
-  background: yellow;
+  background: lightpink;
 }
 </style>
 

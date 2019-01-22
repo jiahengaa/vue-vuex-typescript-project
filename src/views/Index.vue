@@ -46,6 +46,15 @@ export default class Index extends Vue {
       selected: false,
       enable: true,
       visiable: true
+    },
+    {
+      title: 'fddsfdsfs',
+      name: 'dsdssd',
+      index: '3',
+      active: false,
+      selected: false,
+      enable: true,
+      visiable: true
     }
   ]
 
