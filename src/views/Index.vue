@@ -10,6 +10,8 @@ import { Getter, Action } from 'vuex-class'
 import TabControl from '../controls/TabControl.vue'
 import MenuItem from '../model/MenuItem'
 
+import * as $ from '../store/mutation-nav-menu-types'
+
 @Component({
   name: 'index',
   components: {
@@ -47,8 +49,14 @@ export default class Index extends Vue {
     }
   ]
 
+  @Action($.initMenuList) initMenuList?: any
+
   get curMenus(): MenuItem[] {
     return this.menus
+  }
+
+  created() {
+    this.initMenuList(this.menus)
   }
 }
 </script>

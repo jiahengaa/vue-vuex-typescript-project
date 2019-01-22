@@ -1,5 +1,9 @@
 <template>
-  <div class="tab-item" @click="menuSelected">
+  <div
+    class="tab-item"
+    :class="{active:(menuInfo.index ==getSelectedMenu.index )}"
+    @click="menuSelected"
+  >
     <svg class="icon svg-icon" aria-hidden="true">
       <use xlink:href="#icon-fuzifutie"></use>
     </svg>
@@ -11,6 +15,8 @@
 import { Vue, Component, Prop, Provide } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 import MenuItem from '../model/MenuItem'
+import * as $ from '../store/mutation-nav-menu-types'
+
 @Component({
   name: 'tabItem'
 })
@@ -24,13 +30,15 @@ export default class TabItem extends Vue {
   menuInfo: MenuItem = new MenuItem()
 
   created() {
-    // console.log('打印：')
-    // console.log(this.$props)
     this.menuInfo = this.$props.menuItem
   }
 
+  @Action($.selectedMenu) selectedMenu?: any
+  @Getter('getSelectedMenu') public getSelectedMenu?: any
+
   menuSelected() {
     console.log('dddd')
+    this.selectedMenu(this.menuInfo)
   }
 }
 </script>
@@ -41,6 +49,10 @@ export default class TabItem extends Vue {
   color: black;
   height: 100%;
   width: 100%;
+  &.active {
+    background: lightcoral;
+  }
+
   svg {
     margin-top: 10px;
   }

@@ -11,7 +11,7 @@
         class="tab-content-main"
         v-for="item in menus"
         :key="item.index"
-        :class="{active:item.active}"
+        :class="{active:(item.index == curSelectedItem.index)}"
       >
         <tab-content :menu-item="item" :v-bind="item.index"></tab-content>
       </div>
@@ -43,9 +43,15 @@ export default class TabControl extends Vue {
 
   @Provide() menus: Array<MenuItem> = []
 
+  @Getter('getSelectedMenu') public getSelectedMenu?: any
+  @Getter('getMenuList') public getMenuList?: any
+
+  get curSelectedItem() {
+    this.menus = this.getMenuList
+    return this.getSelectedMenu
+  }
+
   created() {
-    // console.log('打印：')
-    // console.log(this.$props)
     this.menus = this.$props.menuList
   }
 }

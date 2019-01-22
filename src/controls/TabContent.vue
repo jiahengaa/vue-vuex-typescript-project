@@ -21,6 +21,17 @@ export default class TabContent extends Vue {
   @Provide()
   menuInfo: MenuItem = new MenuItem()
 
+  @Getter('getSelectedMenu') public getSelectedMenu?: any
+
+  get isActive() {
+    if ((this.menuInfo.index = this.getSelectedMenu.index)) {
+      this.menuInfo = this.getSelectedMenu
+      return true
+    } else {
+      return false
+    }
+  }
+
   created() {
     this.menuInfo = this.$props.menuItem
   }
