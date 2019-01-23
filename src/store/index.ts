@@ -8,6 +8,7 @@ import appStateInfo, { State as AppStateInfo } from './modules/appStateInfo'
 import user, { State as UserInfo } from './modules/user'
 import chat, { State as ChatState } from './modules/Chat'
 import NavMenu, { State as NavMenuState } from './modules/NavMenu'
+import Login, { State as LoginState } from './modules/Login'
 
 Vue.use(Vuex)
 
@@ -20,7 +21,8 @@ export default new Vuex.Store({
     appStateInfo,
     user,
     chat,
-    NavMenu
+    NavMenu,
+    Login
   }
 })
 
@@ -36,6 +38,7 @@ export interface State {
   user: UserInfo
   chat: ChatState
   NavMenu: NavMenuState
+  loginState: LoginState
 }
 
 export type CheckoutStatus = 'successful' | 'failed' | null

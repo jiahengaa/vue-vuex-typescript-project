@@ -4,7 +4,7 @@ import * as _ from '../util/tool'
 
 axios.defaults.timeout = 5000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-axios.defaults.baseURL = 'http://localhost:4000/'
+axios.defaults.baseURL = 'http://localhost:3000/api'
 
 axios.interceptors.request.use(
   (config: any) => {
@@ -16,7 +16,7 @@ axios.interceptors.request.use(
   (error: any) => {
     _.toast('错误的传参', 'fail')
     return Promise.reject(error)
-  },
+  }
 )
 
 axios.interceptors.response.use(
@@ -29,7 +29,7 @@ axios.interceptors.response.use(
   (error: any) => {
     _.toast('网络异常', 'fail')
     return Promise.reject(error)
-  },
+  }
 )
 
 export function fetch(url: string, params: any) {
@@ -42,7 +42,7 @@ export function fetch(url: string, params: any) {
         },
         (error: any) => {
           reject(error)
-        },
+        }
       )
       .catch((error: any) => {
         reject(error)
