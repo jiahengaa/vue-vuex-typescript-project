@@ -1,8 +1,6 @@
 import * as types from '../mutation-common-types'
 import { Commit, Action, ActionTree } from 'vuex'
 import { UserInfo } from '..'
-import Api from '../../fetch/api'
-
 export interface State {
   loginStatus: boolean
   userInfo: UserInfo
@@ -22,9 +20,9 @@ const initState: State = {
     avatar: '',
     createAt: new Date(),
     updateAt: new Date(),
-    objectId: '',
+    objectId: ''
   },
-  userData: [],
+  userData: []
 }
 /**
  * 用户登录
@@ -52,22 +50,24 @@ const setSignOut: Action<State, any> = (context: { commit: Commit }) => {
  */
 const getUserData: Action<State, any> = (context: { commit: Commit }, id: string) => {
   context.commit(types.COM_LOADING_STATUS, true)
-  Api.UserInfo(id).then((res: any) => {
-    context.commit(types.COM_LOADING_STATUS, false)
-    context.commit(types.GET_USER_DATA, res.data)
-  })
+
+  //读取用户信息
+  // Api.UserInfo(id).then((res: any) => {
+  //   context.commit(types.COM_LOADING_STATUS, false)
+  //   context.commit(types.GET_USER_DATA, res.data)
+  // })
 }
 
 const actions: ActionTree<State, any> = {
   setUserInfo,
   setSignOut,
-  getUserData,
+  getUserData
 }
 
 const getters = {
   getUserData: (state: State) => state.userData,
   loginStatus: (state: State) => state.loginStatus,
-  userInfo: (state: State) => state.userInfo,
+  userInfo: (state: State) => state.userInfo
 }
 
 const mutations = {
@@ -79,12 +79,12 @@ const mutations = {
   },
   [types.GET_USER_DATA](state: State, userData: []) {
     state.userData = userData
-  },
+  }
 }
 
 export default {
   state: initState,
   actions,
   getters,
-  mutations,
+  mutations
 }

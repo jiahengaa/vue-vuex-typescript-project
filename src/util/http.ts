@@ -1,9 +1,6 @@
-import axios, { AxiosInterceptorManager, AxiosResponse } from 'axios'
+import axios from 'axios'
 import qs from 'qs'
-import * as $ from '../store/mutation-login-types'
-import store from '@/store'
 import router from '@/router'
-import { resolve } from 'dns'
 
 axios.defaults.timeout = 5000
 axios.defaults.baseURL = 'http://10.80.65.191:3000/api'
@@ -25,6 +22,11 @@ axios.interceptors.request.use(
         }
       })
     }
+
+    if (config.method === 'post') {
+      config.data = qs.stringify(config.data)
+    }
+
     return config
   },
   err => {

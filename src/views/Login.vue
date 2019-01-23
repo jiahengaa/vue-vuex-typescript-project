@@ -37,8 +37,6 @@ import { Getter, Action } from 'vuex-class'
 import LoginState from '../model/LoginState'
 import { setTimeout } from 'timers'
 import * as $ from '../store/mutation-login-types'
-import axios from '../util/http'
-
 @Component({})
 export default class Login extends Vue {
   @Provide() loginState: LoginState = new LoginState()

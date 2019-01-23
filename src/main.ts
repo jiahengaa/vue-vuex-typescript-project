@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import fmtDataFilter from './filters'
 import './assets/iconfont/iconfont'
-import axios from 'axios'
+import axios from './util/http'
 import VueAxios from 'vue-axios'
 import { currencyFilter } from './currency'
 
