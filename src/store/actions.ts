@@ -1,18 +1,33 @@
 import { Commit, Action, ActionTree } from 'vuex'
-import * as types from './mutation-types'
 import { State, Product, AddToCartPayload } from './index'
 
-const addToCart: Action<State, any> = (context: { commit: Commit }, product: Product) => {
-  if (product.inventory > 0) {
-    const payload: AddToCartPayload = {
-      id: product.id,
-    }
-    context.commit(types.ADD_TO_CART, payload)
-  }
+//定义一个const 函数
+const func1: Action<State, any> = (context: { commit: Commit }, str: string) => {
+  // if (product.inventory > 0) {
+  //   const payload: AddToCartPayload = {
+  //     id: product.id,
+  //   }
+  //   context.commit(types.ADD_TO_CART, payload)
+  // }
+  context.commit('printMsg', str)
 }
 
+//定义一个const 函数
+const func2: Action<State, any> = (context: { commit: Commit }, str: string) => {
+  // if (product.inventory > 0) {
+  //   const payload: AddToCartPayload = {
+  //     id: product.id,
+  //   }
+  //   context.commit(types.ADD_TO_CART, payload)
+  // }
+  context.commit('alertMsg', str)
+}
+
+//将const action加入到 actions，用于后面添加到全局vuex的state的actions
 const actions: ActionTree<State, any> = {
-  addToCart,
+  func1,
+  func2
 }
 
+//导出actions
 export default actions

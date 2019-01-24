@@ -2,11 +2,6 @@ import Vue from 'vue'
 import Vuex, { Commit, Dispatch } from 'vuex'
 import actions from './actions'
 import getters from './getters'
-import cart, { State as CardState } from './modules/cart'
-import products, { State as ProductsState } from './modules/products'
-import appStateInfo, { State as AppStateInfo } from './modules/appStateInfo'
-import user, { State as UserInfo } from './modules/user'
-import chat, { State as ChatState } from './modules/Chat'
 import NavMenu, { State as NavMenuState } from './modules/NavMenu'
 import Login, { State as LoginState } from './modules/Login'
 
@@ -16,11 +11,6 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    cart,
-    products,
-    appStateInfo,
-    user,
-    chat,
     NavMenu,
     Login
   }
@@ -32,11 +22,6 @@ export interface ActionContextBasic {
 }
 
 export interface State {
-  cart: CardState
-  products: ProductsState
-  appStateInfo: AppStateInfo
-  user: UserInfo
-  chat: ChatState
   NavMenu: NavMenuState
   loginState: LoginState
 }
