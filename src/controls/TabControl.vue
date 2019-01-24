@@ -39,9 +39,9 @@ export default class TabControl extends Vue {
     type: Array,
     default: () => []
   })
-  public menuList!: Array<MenuItem>
+  public menuList!: MenuItem[]
 
-  @Provide() menus: Array<MenuItem> = []
+  @Provide() public menus: MenuItem[] = []
 
   @Getter('getSelectedMenu') public getSelectedMenu?: any
   @Getter('getMenuList') public getMenuList?: any
@@ -51,7 +51,7 @@ export default class TabControl extends Vue {
     return this.getSelectedMenu
   }
 
-  created() {
+  public created() {
     this.menus = this.$props.menuList
   }
 }

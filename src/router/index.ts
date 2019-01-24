@@ -30,7 +30,7 @@ if (window.localStorage.getItem('token')) {
   store.commit($.setToken, window.localStorage.getItem('token'))
 }
 
-//路由前拦截器
+// 路由前拦截器
 //  判断是否有登录令牌，如果有就正常跳转，如果没有，则跳转的登录页面登录，获取令牌
 router.beforeEach((to, from, next) => {
   if (to.matched.some(r => r.meta.requireAuth)) {

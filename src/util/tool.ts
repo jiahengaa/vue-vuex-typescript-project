@@ -5,7 +5,7 @@ import store from '../store/index'
  */
 export function toast(str: string, icon: string): void {
   store.dispatch('showToast', true)
-  if (icon == 'success') {
+  if (icon === 'success') {
     store.dispatch('showSuccess', true)
     store.dispatch('showFail', false)
   } else {

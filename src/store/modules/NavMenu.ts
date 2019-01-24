@@ -49,7 +49,7 @@ const actions: ActionTree<State, any> = {
 
 const mutations = {
   [$.selectedMenu](state: State, menuItem: MenuItem) {
-    state.menuList.forEach(ele => {
+    state.menuList.forEach((ele: MenuItem) => {
       if (ele.index === menuItem.index) {
         ele.selected = true
         state.curMenuItem = ele
@@ -57,24 +57,23 @@ const mutations = {
     })
   },
   [$.addMenuToList](state: State, menuItem: MenuItem) {
-    var index = _.findIndex(state.menuList, p => {
-      return p.index == menuItem.index
+    const index = _.findIndex(state.menuList, (p: MenuItem) => {
+      return p.index === menuItem.index
     })
-    if (index >= 0) {
-    } else {
+    if (!(index >= 0)) {
       state.menuList.push(menuItem)
     }
   },
   [$.initMenuList](state: State, menus: MenuItem[]) {
     state.menuList = menus
-    state.menuList.forEach(ele => {
+    state.menuList.forEach((ele: MenuItem) => {
       if (ele.selected || ele.active) {
         state.curMenuItem = ele
       }
     })
   },
   [$.updateMenuItem](state: State, menuItem: MenuItem) {
-    state.menuList.forEach(ele => {
+    state.menuList.forEach((ele: MenuItem) => {
       if (ele.index === menuItem.index) {
         Object.assign(ele, menuItem)
       }

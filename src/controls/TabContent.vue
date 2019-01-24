@@ -13,18 +13,17 @@ import { create } from 'domain'
 })
 export default class TabContent extends Vue {
   @Prop({
-    type: Object,
-    default: () => {}
+    type: MenuItem
   })
   public menuItem!: {}
 
   @Provide()
-  menuInfo: MenuItem = new MenuItem()
+  public menuInfo: MenuItem = new MenuItem()
 
   @Getter('getSelectedMenu') public getSelectedMenu?: any
 
   get isActive() {
-    if ((this.menuInfo.index = this.getSelectedMenu.index)) {
+    if (this.menuInfo.index === this.getSelectedMenu.index) {
       this.menuInfo = this.getSelectedMenu
       return true
     } else {
@@ -32,7 +31,7 @@ export default class TabContent extends Vue {
     }
   }
 
-  created() {
+  public created() {
     this.menuInfo = this.$props.menuItem
   }
 }

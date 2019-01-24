@@ -19,7 +19,7 @@ import * as $ from '../store/mutation-nav-menu-types'
   }
 })
 export default class Index extends Vue {
-  menus: MenuItem[] = [
+  public menus: MenuItem[] = [
     {
       title: 'first one',
       name: 'firstone',
@@ -58,13 +58,13 @@ export default class Index extends Vue {
     }
   ]
 
-  @Action($.initMenuList) initMenuList?: any
+  @Action($.initMenuList) public initMenuList?: any
 
   get curMenus(): MenuItem[] {
     return this.menus
   }
 
-  created() {
+  public created() {
     this.initMenuList(this.menus)
   }
 }

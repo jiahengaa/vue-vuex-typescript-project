@@ -23,20 +23,20 @@ import * as $ from '../store/mutation-nav-menu-types'
 export default class TabItem extends Vue {
   @Prop({
     type: Object,
-    default: () => {}
+    default: MenuItem
   })
   public menuItem!: {}
   @Provide()
-  menuInfo: MenuItem = new MenuItem()
+  public menuInfo: MenuItem = new MenuItem()
 
-  created() {
+  @Action($.selectedMenu) public selectedMenu?: any
+  @Getter('getSelectedMenu') public getSelectedMenu?: any
+
+  public created() {
     this.menuInfo = this.$props.menuItem
   }
 
-  @Action($.selectedMenu) selectedMenu?: any
-  @Getter('getSelectedMenu') public getSelectedMenu?: any
-
-  menuSelected() {
+  public menuSelected() {
     this.selectedMenu(this.menuInfo)
   }
 }

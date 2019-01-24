@@ -33,26 +33,27 @@
 <script lang="ts">
 import { Vue, Component, Prop, Provide } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
-
+import { AxiosResponse } from 'axios'
 import LoginState from '../model/LoginState'
 import { setTimeout } from 'timers'
 import * as $ from '../store/mutation-login-types'
+
 @Component({})
 export default class Login extends Vue {
-  @Provide() loginState: LoginState = new LoginState()
+  @Provide() public loginState: LoginState = new LoginState()
 
   @Getter('getToken') public getToken?: any
   @Action($.setToken) public setToken?: any
 
-  login() {
-    if (this.loginState.account != '' && this.loginState.password != '') {
+  public login() {
+    if (this.loginState.account !== '' && this.loginState.password !== '') {
       this.doLogin()
     }
   }
 
-  doLogin() {
+  public doLogin() {
     this.loginState.isLoading = true
-    var loginParam = {
+    const loginParam = {
       name: this.loginState.account,
       password: this.loginState.password
     }
@@ -62,11 +63,11 @@ export default class Login extends Vue {
     } else {
       Vue.axios
         .post('/token/login', loginParam)
-        .then(response => {
+        .then((response: AxiosResponse<any>) => {
           console.log(response)
           this.$router.push('/')
         })
-        .catch(error => {
+        .catch((error: any) => {
           console.log(error)
         })
     }

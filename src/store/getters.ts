@@ -1,8 +1,8 @@
 import { GetterTree, Getter } from 'vuex'
-import { State, menuActiveItem } from './index'
+import { State } from './index'
 
 const menuList: Getter<State, any> = (state: State) => {
-  return state.NavMenu
+  return state.NavMenu.menuList
 }
 
 const getterTree: GetterTree<State, any> = {
