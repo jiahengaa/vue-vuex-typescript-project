@@ -1,14 +1,17 @@
 <template>
-  <div>{{data.length}}</div>
+  <div>
+    <div>{{data.length}}</div>
+  </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop, Provide } from 'vue-property-decorator'
 import { AxiosResponse } from 'axios'
+import { IProduct } from '../model/interface/IProduct'
 
 @Component({})
 export default class Login extends Vue {
-  @Provide() public data: any
+  @Provide() public data: IProduct[] = []
 
   public mounted() {
     Vue.axios
@@ -17,6 +20,7 @@ export default class Login extends Vue {
         console.log('success')
         console.log(response)
         this.data = response.data
+        console.log(this.data)
       })
       .catch((error: any) => {
         console.log('error')
