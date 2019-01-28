@@ -36,13 +36,19 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   (response: AxiosResponse<any>) => {
     // 后端的checkLogin返回的json数据作为跳转依据
-    if (!response.data.token) {
-      router.replace({
-        path: 'login',
-        query: {
-          redirect: router.currentRoute.fullPath
-        }
-      })
+    if (response.data.token) {
+      return response
+    } else {
+      if (response.data.token === undefined) {
+        return response
+      } else {
+        router.replace({
+          path: 'login',
+          query: {
+            redirect: router.currentRoute.fullPath
+          }
+        })
+      }
     }
     return response
   },

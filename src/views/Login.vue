@@ -58,19 +58,21 @@ export default class Login extends Vue {
       password: this.loginState.password
     }
 
-    if (this.getToken) {
-      this.setToken(this.getToken)
-    } else {
-      Vue.axios
-        .post('/token/login', loginParam)
-        .then((response: AxiosResponse<any>) => {
-          console.log(response)
-          this.$router.push('/')
-        })
-        .catch((error: any) => {
-          console.log(error)
-        })
-    }
+    Vue.axios
+      .post('/token/login', loginParam)
+      .then((response: AxiosResponse<any>) => {
+        console.log(response)
+        this.setToken(response.data.token)
+        console.log(this.$router.currentRoute)
+        if (this.$router.currentRoute.query === {}) {
+          this.$router.replace('/')
+        } else {
+          this.$router.replace(this.$router.currentRoute.query.redirect.toString())
+        }
+      })
+      .catch((error: any) => {
+        console.log(error)
+      })
   }
 }
 </script>
