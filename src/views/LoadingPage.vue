@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <v-loading></v-loading>
   </div>
 </template>
@@ -17,4 +17,11 @@ import Loading from '@/components/Loading.vue'
 })
 export default class LoadingPage extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+.app {
+  margin-left: 100px;
+  margin-top: 100px;
+}
+</style>
 
