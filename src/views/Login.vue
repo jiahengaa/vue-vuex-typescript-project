@@ -61,10 +61,8 @@ export default class Login extends Vue {
     Vue.axios
       .post('/token/login', loginParam)
       .then((response: AxiosResponse<any>) => {
-        console.log(response)
         this.setToken(response.data.token)
-        console.log(this.$router.currentRoute)
-        if (this.$router.currentRoute.query === {}) {
+        if (this.$router.currentRoute.query.redirect === undefined) {
           this.$router.replace('/')
         } else {
           this.$router.replace(this.$router.currentRoute.query.redirect.toString())
@@ -76,6 +74,7 @@ export default class Login extends Vue {
   }
 }
 </script>
+
 
 
 <style lang="scss" scoped>
