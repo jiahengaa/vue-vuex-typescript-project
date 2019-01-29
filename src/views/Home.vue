@@ -20,6 +20,6 @@ export default class Home extends Vue {}
 
 <style lang="scss" scoped>
 .home {
-  overflow: hidden;
+  // overflow: hidden;
 }
 </style>

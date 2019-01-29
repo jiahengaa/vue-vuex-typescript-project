@@ -1,19 +1,38 @@
 <template>
-  <div class="loading">
-    <div class="mask"></div>
-    <div class="loader-inner">
-      <div class="loader-line-warp">
-        <div class="loader-line"></div>
+  <div class="jiggly puffed">
+    <div class="jiggly-body-upper">
+      <div class="jiggly-body"></div>
+      <div class="jiggly-ear jiggly-ear-left"></div>
+      <div class="jiggly-ear jiggly-ear-right"></div>
+      <div class="jiggly-puff"></div>
+      <div class="jiggly-face">
+        <div class="jiggly-eye jiggly-eye-left">
+          <div class="jiggly-eye-pupil"></div>
+          <div class="jiggly-eye-lid"></div>
+        </div>
+        <div class="jiggly-eye jiggly-eye-right">
+          <div class="jiggly-eye-pupil"></div>
+          <div class="jiggly-eye-lid"></div>
+        </div>
+        <div class="jiggly-blush jiggly-blush-left"></div>
+        <div class="jiggly-blush jiggly-blush-right"></div>
+        <div class="jiggly-mouth">
+          <div class="jiggly-mouth-singing"></div>
+        </div>
       </div>
-      <div class="loader-line-warp">
-        <div class="loader-line"></div>
+      <div class="jiggly-arm jiggly-arm-left">
+        <div class="jiggly-marker"></div>
       </div>
-      <div class="loader-line-warp">
-        <div class="loader-line"></div>
+      <div class="jiggly-arm-right-wrapper">
+        <div class="jiggly-arm jiggly-arm-right"></div>
       </div>
-      <div class="loader-line-warp">
-        <div class="loader-line"></div>
-      </div>
+    </div>
+    <div class="jiggly-leg jiggly-leg-left"></div>
+    <div class="jiggly-leg jiggly-leg-right"></div>
+    <div class="jiggly-music-notes">
+      <div class="jiggly-music-note jiggly-music-note-one"></div>
+      <div class="jiggly-music-note jiggly-music-note-two"></div>
+      <div class="jiggly-music-note jiggly-music-note-three"></div>
     </div>
   </div>
 </template>
@@ -25,107 +44,859 @@ export default Vue.extend({})
 
 
 <style lang="scss" scoped>
-@import '../assets/scss/function';
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(https://fonts.gstatic.com/s/robotocondensed/v16/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCkYb8td.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(https://fonts.gstatic.com/s/robotocondensed/v16/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCAYb8td.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(https://fonts.gstatic.com/s/robotocondensed/v16/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCgYb8td.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(https://fonts.gstatic.com/s/robotocondensed/v16/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCcYb8td.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(https://fonts.gstatic.com/s/robotocondensed/v16/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCsYb8td.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(https://fonts.gstatic.com/s/robotocondensed/v16/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCoYb8td.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url(https://fonts.gstatic.com/s/robotocondensed/v16/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCQYbw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+$black: #a41020;
+$white: #fff;
+$grey: #6a5262;
 
-.loading {
-  position: fixed;
-  z-index: 100;
-  .loader-inner {
-    width: px2rem(280px);
-    height: px2rem(280px);
-    transform: translate(100%, 180%);
-    position: absolute;
-    z-index: 1002;
-    .loader-inner-wrap {
-      animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
-      box-sizing: border-box;
-      height: 50px;
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      transform-origin: 50% 100%;
-      width: 100px;
-      &:nth-child(1) {
-        animation-delay: -50ms;
-        .loader-line {
-          border-color: hsl(0, 80%, 60%);
-          height: 90px;
-          width: 90px;
-          top: 7px;
-        }
-      }
-      &:nth-child(2) {
-        animation-delay: -100ms;
-        .loader-line {
-          border-color: hsl(60, 80%, 60%);
-          height: 76px;
-          width: 76px;
-          top: 14px;
-        }
-      }
-      &:nth-child(3) {
-        animation-delay: -150ms;
-        .loader-line {
-          border-color: hsl(120, 80%, 60%);
-          height: 62px;
-          width: 62px;
-          top: 21px;
-        }
-      }
-      &:nth-child(4) {
-        animation-delay: -200ms;
-        .loader-line {
-          border-color: hsl(180, 80%, 60%);
-          height: 48px;
-          width: 48px;
-          top: 28px;
-        }
-      }
-      &:nth-child(5) {
-        animation-delay: -250ms;
-        .loader-line {
-          border-color: hsl(240, 80%, 60%);
-          height: 34px;
-          width: 34px;
-          top: 35px;
-        }
-      }
-      .loader-line {
-        border: 4px solid transparent;
-        border-radius: 100%;
-        box-sizing: border-box;
-        height: 100px;
-        left: 0;
-        margin: 0 auto;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100px;
-      }
+$primary-color: #ffcdc5;
+$primary-color-dark: lighten(#ffaca4, 3%);
+$primary-color-tint: #fff;
+$secondary-color: #10b4ee;
+$secondary-color-dark: #1873c5;
+$blush-color: #f67b94;
+$mic-color: #52a48b;
+
+$primary-font: 'Roboto Condensed', sans-serif;
+$border-main: solid 3px;
+$cubic-bezier: cubic-bezier(0.35, -0.1, 0.35, 2);
+
+@mixin noteAnimate($id, $x: 0, $y: 0, $delay: 2s) {
+  animation: scaleNote#{$id} 6s $delay ease-in-out infinite;
+
+  @keyframes scaleNote#{$id} {
+    0% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0;
+    }
+    5%,
+    100% {
+      transform: scale(1) translate(0, 0);
+      opacity: 1;
+    }
+    50%,
+    99.9% {
+      transform: scale(1.2) translate(#{$x}, #{$y});
+      opacity: 0;
     }
   }
+}
 
-  .mask {
-    position: fixed;
-    width: 100%;
-    margin: 0 auto;
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: lighten($primary-color, 5%);
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.875em;
+}
+
+.jiggly {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  font-size: 1rem;
+
+  &-body {
+    position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1001;
-    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: $primary-color;
+    transition: 0.5s ease-in-out;
+
+    &-upper {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+    }
   }
 
-  @keyframes spin {
-    0%,
-    15% {
-      transform: rotate(0);
+  &-ear {
+    position: absolute;
+    z-index: 1;
+    bottom: calc(100% - 4.25em);
+    height: 4em;
+    width: 2.5em;
+    background-color: $primary-color;
+    transform-origin: bottom center;
+    transition: 0.5s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 70%;
+      width: 60%;
+      background-color: $grey;
     }
-    100% {
-      transform: rotate(360deg);
+
+    &-left {
+      left: 0;
+      border-top-left-radius: 80% 0.5em;
+      border-top-right-radius: 80% 0.5em;
+      border-bottom-left-radius: 0.5em 80%;
+      transform: skewY(10deg);
+
+      &::after {
+        left: 15%;
+        border-top-left-radius: 0.25em;
+      }
     }
+
+    &-right {
+      right: 0;
+      border-top-left-radius: 80% 0.5em;
+      border-top-right-radius: 80% 0.5em;
+      border-bottom-right-radius: 0.5em 80%;
+      transform: skewY(-10deg);
+
+      &::after {
+        right: 15%;
+        border-top-right-radius: 0.25em;
+      }
+    }
+  }
+
+  &-puff {
+    position: absolute;
+    z-index: 5;
+    top: -0.75em;
+    left: 25%;
+    height: 4.25em;
+    width: 3.5em;
+    transition: 0.5s $cubic-bezier;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 50% 40%;
+      border-top-right-radius: 50% 30%;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50% 30%;
+      border-bottom: $border-main $primary-color-dark;
+      border-left: $border-main $primary-color-dark;
+      background-color: $primary-color;
+      transform: skew(-10deg);
+    }
+
+    &::after {
+      z-index: 6;
+      right: -5%;
+      bottom: 15%;
+      height: 2.5em;
+      width: 1.5em;
+      border-radius: 50%;
+      border-right: $border-main $primary-color-dark;
+      transform: rotate(65deg);
+    }
+  }
+
+  &-face {
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+  }
+
+  &-eye {
+    position: absolute;
+    z-index: 2;
+    top: 3.75em;
+    height: 3.25em;
+    width: 3.25em;
+    border-radius: 50%;
+    background-color: $white;
+    transform-origin: center 70%;
+    animation-name: blinky;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+    &-pupil {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 75%;
+      width: 75%;
+      background-color: $secondary-color;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      &::before {
+        left: 5%;
+        top: 0;
+        height: 75%;
+        width: 75%;
+        background-color: $secondary-color-dark;
+      }
+
+      &::after {
+        left: 15%;
+        top: 15%;
+        height: 35%;
+        width: 35%;
+        background-color: $white;
+      }
+    }
+
+    &-lid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        transform: scaleX(1) rotate(0deg) translate(0, 0);
+        opacity: 0; // for scale(0) bug
+        transition: transform 0.3s ease-in-out, opacity 0.2s 0.1s;
+      }
+
+      &::before {
+        left: 0;
+        bottom: 100%;
+        height: 50%;
+        width: 100%;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+        border-bottom: $border-main $primary-color-dark;
+        background-color: $primary-color;
+      }
+
+      &::after {
+        left: 0;
+        top: 100%;
+        height: 40%;
+        width: 100%;
+        border-top-left-radius: 50% 100%;
+        border-top-right-radius: 50% 100%;
+        border-top: $border-main $primary-color-dark;
+        background-color: $primary-color;
+      }
+    }
+
+    &-left {
+      left: 0.875em;
+    }
+
+    &-right {
+      right: 0.875em;
+    }
+  }
+
+  &-blush {
+    position: absolute;
+    z-index: 1;
+    top: 6.625rem;
+    height: 0.75rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: $blush-color;
+    opacity: 0.3;
+    transition: 0.35s ease-in-out;
+
+    &-left {
+      left: 0.75rem;
+    }
+
+    &-right {
+      right: 0.75rem;
+    }
+  }
+
+  &-mouth {
+    position: absolute;
+    z-index: 5;
+    bottom: 2.75em;
+    left: calc(50% - (1em / 2));
+    width: 1em;
+    height: 0.75em;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      z-index: 100;
+      height: 150%;
+      width: 100%;
+      border-radius: 50%;
+      background-color: $black;
+      transform: scaleY(0);
+      transform-origin: top center;
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+      width: calc(100% - 4px);
+      height: 100%;
+      border-bottom-left-radius: 0.75em 80%;
+      border-bottom-right-radius: 0.75em 80%;
+      border: solid 2px $black;
+      border-top: 0;
+      background-color: transparent;
+      transform-origin: 70% center;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  &-arm {
+    position: absolute;
+    z-index: 10;
+    top: 8em;
+    height: 1.75em;
+    width: 1em;
+    border: $border-main $primary-color-dark;
+    border-top: 0;
+    background-color: $primary-color;
+    transform-origin: top center;
+    transition: 0.45s ease-in-out;
+
+    border: {
+      top: {
+        left-radius: 0.5em;
+        right-radius: 0.5em;
+      }
+      bottom: {
+        left-radius: 70% 100%;
+        right-radius: 70% 100%;
+      }
+    }
+
+    &-left {
+      left: 1.25em;
+      border-right: solid 1px $primary-color-dark;
+      transform: rotate(60deg);
+    }
+
+    &-right {
+      // right: 1.25em;
+      border-left: solid 1px $primary-color-dark;
+      transform: rotate(-60deg);
+
+      &-wrapper {
+        position: absolute;
+        z-index: 10;
+        top: 8em;
+        right: 1.25em;
+        height: 1.75em;
+        width: 1em;
+        transform-origin: top center;
+
+        .jiggly-arm {
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &-marker {
+    position: absolute;
+    top: calc(100% - 0.5em);
+    left: -1em;
+    height: 0.75em;
+    width: 2em;
+    border-radius: 0.25em;
+    background-color: $grey;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      z-index: 1;
+      left: -0.125em;
+      top: calc(50% - 0.25em);
+      height: 0.5em;
+      width: 0.5em;
+      border-bottom-left-radius: 2px;
+      border-top-right-radius: 100%;
+      background-color: $black;
+      background-image: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 20%,
+        rgba(lighten($grey, 15%), 1) 20%,
+        rgba(lighten($grey, 15%), 1) 100%
+      );
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      z-index: 2;
+      right: calc(100% - 0.5em);
+      top: -0.25em;
+      height: 1.25em;
+      width: 1.5em;
+      border-radius: 0.25em;
+      background-color: $mic-color;
+      transition: 0.15s ease-out;
+    }
+  }
+
+  &-leg {
+    position: absolute;
+    z-index: 1;
+    bottom: -1.75em;
+    height: 2.5em;
+    width: 1.25em;
+    background-color: $primary-color-dark;
+    transform-origin: top center;
+
+    border: {
+      top: {
+        left-radius: 0.5em;
+        right-radius: 0.5em;
+      }
+      bottom: {
+        left-radius: 70% 100%;
+        right-radius: 70% 100%;
+      }
+    }
+
+    &-left {
+      left: 3em;
+      transform: rotate(50deg);
+    }
+
+    &-right {
+      right: 3em;
+      transform: rotate(-50deg);
+    }
+  }
+
+  &-music-notes {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: overlay;
+  }
+
+  &-music-note {
+    position: absolute;
+    left: calc(50% - 0.625rem);
+    top: calc(50% - 0.625rem);
+    height: 1.25rem;
+    width: 1.25rem;
+    border: $border-main currentColor;
+    border-top-width: 6px;
+    border-bottom: 0;
+    color: $secondary-color;
+    mix-blend-mode: overlay;
+    opacity: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.25em;
+      height: 0.5em;
+      width: 0.75em;
+      border-radius: 50%;
+      background-color: currentColor;
+      transform: rotate(-25deg);
+    }
+
+    &::before {
+      right: 100%;
+    }
+
+    &::after {
+      right: -3px;
+    }
+  }
+
+  // &.puffed {
+  &:hover {
+    .jiggly {
+      &-body {
+        transform: scale(1.2);
+        transition: 0.15s 0.4s $cubic-bezier;
+      }
+
+      &-face {
+        transform: translateY(0.5em);
+        transition: 0.15s 0.2s ease-in;
+      }
+
+      &-ear {
+        transition: 0.15s 0.4s $cubic-bezier;
+
+        &-left {
+          transform: translate(-0.5rem, -0.5rem) rotate(-5deg);
+        }
+
+        &-right {
+          transform: translate(0.5rem, -0.5rem) rotate(5deg);
+        }
+      }
+
+      &-puff {
+        transform: scale(1.15);
+      }
+
+      &-eye {
+        .jiggly-eye-lid {
+          &::before,
+          &::after {
+            opacity: 1;
+            transition: transform 0.3s ease-in-out, opacity 0.1s;
+          }
+
+          &::after {
+            transition: transform 0.15s 0.3s ease-in-out, opacity 0.25s 0.1s;
+          }
+        }
+
+        &-left {
+          .jiggly-eye-lid {
+            &::before {
+              transform: rotate(15deg) translate(0.5em, 0.75em) scaleX(1.2);
+            }
+
+            &::after {
+              transform: rotate(15deg) translate(-1em, -1em) scaleX(1.2);
+            }
+          }
+        }
+
+        &-right {
+          .jiggly-eye-lid {
+            &::before {
+              transform: rotate(-15deg) translate(-0.5em, 0.75em) scaleX(1.2);
+            }
+
+            &::after {
+              transform: rotate(-15deg) translate(1em, -1em) scaleX(1.2);
+            }
+          }
+        }
+      }
+
+      &-blush {
+        opacity: 0;
+      }
+
+      &-mouth {
+        &::before {
+          animation-name: scaleMouthUp;
+          animation-duration: 0.6s;
+        }
+
+        &::after {
+          // width: 100%;
+          border-bottom-left-radius: 0.75em 80%;
+          border-bottom-right-radius: 0.75em 80%;
+          border-left-color: transparent;
+          border-right-color: transparent;
+          transform: rotateX(180deg);
+          transition: border-left-color 0s, border-right-color 0s, transform 0.6s ease-in-out;
+        }
+      }
+
+      &-arm {
+        transition: 0.45s 0.15s ease-in-out;
+
+        &-left {
+          transform: translateX(-0.75rem) rotate(80deg);
+        }
+        &-right {
+          transform: translateX(0.75rem) rotate(-80deg);
+        }
+      }
+
+      &-marker {
+        &::after {
+          transform: translateX(-40em);
+          transition: 0.3s 0.7s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &:not(:hover) {
+    .jiggly {
+      &-body {
+        &-upper {
+          animation-name: rotateDance;
+          animation-duration: 3s;
+          animation-delay: 2s;
+          animation-timing-function: ease-out;
+          animation-iteration-count: infinite;
+        }
+      }
+
+      &-mouth {
+        &::after {
+          height: 0px;
+          transition: height 0.2s 2s, transform 0.3s ease-in-out;
+          overflow: hidden;
+        }
+
+        &-singing {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          border-bottom-left-radius: 50% 80%;
+          border-bottom-right-radius: 50% 80%;
+          background-color: $black;
+          transform-origin: top center;
+          transform: scaleY(0);
+          overflow: hidden;
+          animation-name: scaleMouthSinging;
+          animation-duration: 2.5s;
+          animation-delay: 2s;
+          animation-timing-function: ease-out;
+          animation-iteration-count: infinite;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.125em;
+            right: -0.125em;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background-color: $blush-color;
+          }
+        }
+      }
+
+      &-arm {
+        &-left {
+          transform: rotateX(180deg) rotate(-120deg);
+          transition: 0.45s 0.15s ease-in-out;
+        }
+
+        &-right-wrapper {
+          animation-name: moveArmRight;
+          animation-duration: 7s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+        }
+      }
+
+      &-music-notes {
+        animation-name: rotateNotes;
+        animation-duration: 10s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      &-music-note-one {
+        @include noteAnimate('one', 7em, -7em, 3s);
+      }
+      &-music-note-two {
+        @include noteAnimate('two', 3em, 4em, 4.5s);
+      }
+      &-music-note-three {
+        @include noteAnimate('two', -7em, -9em, 6s);
+      }
+    }
+  }
+}
+
+@keyframes scaleMouthUp {
+  0% {
+    transform: scaleY(0) translateY(100%);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+  50%,
+  60% {
+    transform: scaleY(1.1) translateY(0);
+  }
+}
+
+@keyframes moveArmRight {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes scaleMouthSinging {
+  0%,
+  100%,
+  20%,
+  80%,
+  60% {
+    transform: scaleY(0);
+  }
+  30%,
+  70%,
+  75% {
+    transform: scaleY(0.5);
+  }
+  10%,
+  15% {
+    transform: scaleY(1);
+  }
+  50%,
+  55%,
+  90%,
+  95% {
+    transform: scaleY(1.5);
+  }
+}
+
+@keyframes rotateDance {
+  0%,
+  50%,
+  100% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(5deg) rotate(2deg) translateY(-2px);
+  }
+  75% {
+    transform: rotateY(-5deg) rotate(-2deg) translateY(-2px);
+  }
+}
+
+@keyframes rotateNotes {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes blinky {
+  0%,
+  9%,
+  11%,
+  19%,
+  21%,
+  69%,
+  71%,
+  100% {
+    transform: scaleY(1);
+  }
+  10%,
+  20%,
+  70% {
+    transform: scaleY(0.1);
   }
 }
 </style>

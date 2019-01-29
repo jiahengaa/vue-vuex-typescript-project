@@ -26,13 +26,15 @@ import { MenuRoute } from '../model/interface/IMenuRoute'
 import SelfTabPage from '@/views/SelfTabPage.vue'
 import NavMenu from '@/views/NavMenu.vue'
 import PrintData from '@/views/PrintData.vue'
+import LoadingPage from '@/views/LoadingPage.vue'
 
 @Component({
   name: 'gracetab',
   components: {
     SelfTabPage,
     NavMenu,
-    PrintData
+    PrintData,
+    LoadingPage
   }
 })
 export default class GraceTab extends Vue {
@@ -71,28 +73,28 @@ export default class GraceTab extends Vue {
       path: 'PrintData'
     },
     {
-      title: 'fddsfdsfs',
-      name: 'dsdssd',
+      title: 'LoadingPage',
+      name: 'LoadingPage',
       index: '3',
       active: false,
       selected: false,
       enable: true,
       visiable: true,
       keepAlive: true,
-      path: 'SelfTabPage'
+      path: 'LoadingPage'
     }
   ]
 
   public curMenu: MenuRoute = {
-    title: 'second one',
-    name: 'secondone',
+    title: 'LoadingPage',
+    name: 'LoadingPage',
     index: '1',
     active: true,
     selected: false,
     enable: true,
     visiable: true,
     keepAlive: true,
-    path: 'SelfTabPage'
+    path: 'LoadingPage'
   }
 
   public selectMenu(menu: MenuRoute) {
