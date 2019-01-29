@@ -80,7 +80,7 @@ export default class TabControl extends Vue {
 
   .tab-content {
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 100px - 50px);
     .tab-content-main {
       width: 100%;
       height: 100%;

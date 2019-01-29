@@ -13,6 +13,8 @@
 
 <style lang="scss" scoped>
 .nav-menu {
+  width: 100vw;
+  height: 100vh;
   .nav {
     height: 50px;
     width: 100%;

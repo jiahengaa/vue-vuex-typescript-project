@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <div>{{data.length}}</div>
   </div>
 </template>
@@ -30,3 +30,9 @@ export default class Login extends Vue {
 }
 </script>
 
+<style lang="scss" scoped>
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+</style>

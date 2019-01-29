@@ -13,49 +13,17 @@ import MenuItem from '../model/MenuItem'
 import * as $ from '../store/mutation-nav-menu-types'
 
 @Component({
-  name: 'index',
+  name: 'selfTabPage',
   components: {
     'tab-control': TabControl
   }
 })
-export default class Index extends Vue {
+export default class SelfTabPage extends Vue {
   public menus: MenuItem[] = [
-    {
-      title: 'first one',
-      name: 'firstone',
-      index: '0',
-      active: false,
-      selected: false,
-      enable: true,
-      visiable: true
-    },
-    {
-      title: 'second one',
-      name: 'secondone',
-      index: '1',
-      active: true,
-      selected: false,
-      enable: true,
-      visiable: true
-    },
-    {
-      title: 'three',
-      name: 'three',
-      index: '2',
-      active: false,
-      selected: false,
-      enable: true,
-      visiable: true
-    },
-    {
-      title: 'fddsfdsfs',
-      name: 'dsdssd',
-      index: '3',
-      active: false,
-      selected: false,
-      enable: true,
-      visiable: true
-    }
+    new MenuItem('firstone', '0', 'first one', false),
+    new MenuItem('secondone', '1', 'second one', true),
+    new MenuItem('three', '2', 'three', false, false, true, true, true),
+    new MenuItem('fddsfdsfs', '3', 'dsdssd', false, false, true, true, true)
   ]
 
   @Action($.initMenuList) public initMenuList?: any
@@ -74,6 +42,5 @@ export default class Index extends Vue {
 .app {
   width: 100vw;
   height: 100vh;
-  position: fixed;
 }
 </style>

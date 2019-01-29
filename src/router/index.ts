@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/views/Index.vue'
+import SelfTabPage from '@/views/SelfTabPage.vue'
 import Login from '@/views/Login.vue'
 import NavMenu from '@/views/NavMenu.vue'
 import PrintData from '@/views/PrintData.vue'
+import Home from '@/views/Home.vue'
+import homeRouter from './moudules/homeRouter'
 import VueRouter from 'vue-router'
 import store from '@/store'
 
@@ -15,26 +17,14 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: Index
+    redirect: '/home'
   },
   {
     path: '/login',
     name: 'login',
     component: Login
   },
-  {
-    path: '/navmenu',
-    name: 'navmenu',
-    component: NavMenu
-  },
-  {
-    path: '/printdata',
-    name: 'printdata',
-    component: PrintData,
-    meta: {
-      requireAuth: true
-    }
-  }
+  homeRouter
 ]
 
 const router = new VueRouter({

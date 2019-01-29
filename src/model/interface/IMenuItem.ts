@@ -6,4 +6,5 @@ export interface IMenuItem {
   selected?: boolean
   enable?: boolean
   visiable?: boolean
+  keepAlive: boolean
 }

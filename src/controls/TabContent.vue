@@ -1,5 +1,11 @@
 <template>
-  <div class="tab-content" :class="{active:menuInfo.active}">{{menuInfo.title}}</div>
+  <div class="tab-content" :class="{active:menuInfo.active}">
+    <keep-alive>
+      <router-view v-if="menuInfo.keepAlive"></router-view>
+    </keep-alive>
+
+    <router-view v-if="!menuInfo.keepAlive"></router-view>
+  </div>
 </template>
 
 <script lang="ts">
