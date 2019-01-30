@@ -381,6 +381,21 @@
         </li>
       </ul>
     </nav>
+
+    <h2>总结体会</h2>
+    <h3>
+      使用ul和li实现列表展示功能，然后通过nav默认样式命名空间样式命名空间作用域实现默认效果，
+      然后各种特效展开折叠通过nav1或者nav2或者nav3或者nav4或者nav5样式命名空间作用域实现
+    </h3>
+    <h4>关键属性：
+      <ul>
+        <li>z-index 上下堆叠层级</li>
+        <li>list-style 列表样式，此处设置为none，取消默认的圆点显示</li>
+        <li>ul的after属性的设置非常关键,before注释掉了， 感觉没有多大用处</li>
+        <li>妙用：hover这个css属性，重写鼠标悬停时的样式，达到折叠展开的目的</li>
+        <li>a标签的text-decoration控制链接文字的样式，此处设置为none，去掉下划线</li>
+      </ul>
+    </h4>
   </div>
 </template>
 
@@ -405,10 +420,10 @@ export default class NavSample extends Vue {}
     padding: 0px;
     background-color: #333;
 
-    &:before {
-      content: '';
-      display: table;
-    }
+    // &:before {
+    //   content: '';
+    //   display: table;
+    // }
     &:after {
       content: '';
       display: table;
@@ -471,6 +486,7 @@ export default class NavSample extends Vue {}
     }
   }
 
+  //有淡入淡出的展开折叠
   &.nav2 {
     li {
       ul {
@@ -500,7 +516,7 @@ export default class NavSample extends Vue {}
       }
     }
   }
-
+  //有渐进滚动展开折叠实现1
   &.nav3 {
     li {
       ul {
@@ -528,7 +544,7 @@ export default class NavSample extends Vue {}
       }
     }
   }
-
+  //有渐进滚动n展开he折叠h实现2
   &.nav4 {
     li {
       ul {
@@ -557,6 +573,7 @@ export default class NavSample extends Vue {}
     }
   }
 
+  //翻转展开折叠实现
   &.nav5 {
     li {
       ul {
