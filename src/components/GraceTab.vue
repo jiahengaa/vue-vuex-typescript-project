@@ -28,6 +28,8 @@ import NavMenu from '@/views/NavMenu.vue'
 import PrintData from '@/views/PrintData.vue'
 import LoadingPage from '@/views/LoadingPage.vue'
 import NavSample from '@/components/NavSample.vue'
+import LeftNavSample from '@/components/LeftNavSample.vue'
+import BeautifulPage from '@/components/BeautifulPage.vue'
 
 @Component({
   name: 'gracetab',
@@ -36,7 +38,9 @@ import NavSample from '@/components/NavSample.vue'
     NavMenu,
     PrintData,
     LoadingPage,
-    NavSample
+    NavSample,
+    BeautifulPage,
+    LeftNavSample
   }
 })
 export default class GraceTab extends Vue {
@@ -95,6 +99,28 @@ export default class GraceTab extends Vue {
       visiable: true,
       keepAlive: true,
       path: 'NavSample'
+    },
+    {
+      title: 'BeautifulPage',
+      name: 'BeautifulPage',
+      index: '5',
+      active: false,
+      selected: false,
+      enable: true,
+      visiable: true,
+      keepAlive: true,
+      path: 'BeautifulPage'
+    },
+    {
+      title: 'LeftNavSample',
+      name: 'LeftNavSample',
+      index: '6',
+      active: false,
+      selected: false,
+      enable: true,
+      visiable: true,
+      keepAlive: true,
+      path: 'LeftNavSample'
     }
   ]
 
