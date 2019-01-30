@@ -27,6 +27,7 @@ import SelfTabPage from '@/views/SelfTabPage.vue'
 import NavMenu from '@/views/NavMenu.vue'
 import PrintData from '@/views/PrintData.vue'
 import LoadingPage from '@/views/LoadingPage.vue'
+import NavSample from '@/components/NavSample.vue'
 
 @Component({
   name: 'gracetab',
@@ -34,7 +35,8 @@ import LoadingPage from '@/views/LoadingPage.vue'
     SelfTabPage,
     NavMenu,
     PrintData,
-    LoadingPage
+    LoadingPage,
+    NavSample
   }
 })
 export default class GraceTab extends Vue {
@@ -82,6 +84,17 @@ export default class GraceTab extends Vue {
       visiable: true,
       keepAlive: true,
       path: 'LoadingPage'
+    },
+    {
+      title: 'NavSample',
+      name: 'NavSample',
+      index: '4',
+      active: false,
+      selected: false,
+      enable: true,
+      visiable: true,
+      keepAlive: true,
+      path: 'NavSample'
     }
   ]
 

@@ -14,7 +14,7 @@
 
     "semicolon": [false, "always"],
     "space-before-function-paren": ["off", "never"],
-    "standard/computed-property-even-spacing": "off",
+    // "standard/computed-property-even-spacing": "off",
 
     "no-console": false,
     "trailing-comma": [
