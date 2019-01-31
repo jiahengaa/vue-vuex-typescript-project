@@ -30,6 +30,7 @@ import LoadingPage from '@/views/LoadingPage.vue'
 import NavSample from '@/components/NavSample.vue'
 import LeftNavSample from '@/components/LeftNavSample.vue'
 import BeautifulPage from '@/components/BeautifulPage.vue'
+import TableOfElement from '@/components/TableOfElement.vue'
 
 @Component({
   name: 'gracetab',
@@ -40,7 +41,8 @@ import BeautifulPage from '@/components/BeautifulPage.vue'
     LoadingPage,
     NavSample,
     BeautifulPage,
-    LeftNavSample
+    LeftNavSample,
+    TableOfElement
   }
 })
 export default class GraceTab extends Vue {
@@ -121,6 +123,17 @@ export default class GraceTab extends Vue {
       visiable: true,
       keepAlive: true,
       path: 'LeftNavSample'
+    },
+    {
+      title: 'TableOfElement',
+      name: 'TableOfElement',
+      index: '7',
+      active: false,
+      selected: false,
+      enable: true,
+      visiable: true,
+      keepAlive: true,
+      path: 'TableOfElement'
     }
   ]
 
