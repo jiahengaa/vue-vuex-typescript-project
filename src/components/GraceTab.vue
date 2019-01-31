@@ -31,6 +31,7 @@ import NavSample from '@/components/NavSample.vue'
 import LeftNavSample from '@/components/LeftNavSample.vue'
 import BeautifulPage from '@/components/BeautifulPage.vue'
 import TableOfElement from '@/components/TableOfElement.vue'
+import StarShooting from '@/components/StarShooting.vue'
 
 @Component({
   name: 'gracetab',
@@ -42,7 +43,8 @@ import TableOfElement from '@/components/TableOfElement.vue'
     NavSample,
     BeautifulPage,
     LeftNavSample,
-    TableOfElement
+    TableOfElement,
+    StarShooting
   }
 })
 export default class GraceTab extends Vue {
@@ -134,6 +136,17 @@ export default class GraceTab extends Vue {
       visiable: true,
       keepAlive: true,
       path: 'TableOfElement'
+    },
+    {
+      title: 'StarShooting',
+      name: 'StarShooting',
+      index: '8',
+      active: false,
+      selected: false,
+      enable: true,
+      visiable: true,
+      keepAlive: true,
+      path: 'StarShooting'
     }
   ]
 
@@ -165,6 +178,7 @@ export default class GraceTab extends Vue {
     //bottom: 0;
     list-style: none; /*在一个声明中设置所有的列表属性*/
     background: lightcoral;
+    display: inline-flex;
 
     .tab-header-item {
       float: left;
