@@ -32,7 +32,6 @@ import LeftNavSample from '@/components/LeftNavSample.vue'
 import BeautifulPage from '@/components/BeautifulPage.vue'
 import TableOfElement from '@/components/TableOfElement.vue'
 import StarShooting from '@/components/StarShooting.vue'
-import SoftLock from '@/components/SoftLock.vue'
 
 @Component({
   name: 'gracetab',
@@ -45,8 +44,7 @@ import SoftLock from '@/components/SoftLock.vue'
     BeautifulPage,
     LeftNavSample,
     TableOfElement,
-    StarShooting,
-    SoftLock
+    StarShooting
   }
 })
 export default class GraceTab extends Vue {
@@ -149,17 +147,6 @@ export default class GraceTab extends Vue {
       visiable: true,
       keepAlive: true,
       path: 'StarShooting'
-    },
-    {
-      title: 'SoftLock',
-      name: 'SoftLock',
-      index: '9',
-      active: false,
-      selected: false,
-      enable: true,
-      visiable: true,
-      keepAlive: true,
-      path: 'SoftLock'
     }
   ]
 

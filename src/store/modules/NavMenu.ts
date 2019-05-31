@@ -1,7 +1,6 @@
 import * as $ from '../mutation-nav-menu-types'
 import { Commit, Action, ActionTree } from 'vuex'
 import MenuItem from '../../model/MenuItem'
-import * as _ from 'lodash'
 
 export interface State {
   menuList: MenuItem[]
@@ -55,14 +54,6 @@ const mutations = {
         state.curMenuItem = ele
       }
     })
-  },
-  [$.addMenuToList](state: State, menuItem: MenuItem) {
-    const index = _.findIndex(state.menuList, (p: MenuItem) => {
-      return p.index === menuItem.index
-    })
-    if (!(index >= 0)) {
-      state.menuList.push(menuItem)
-    }
   },
   [$.initMenuList](state: State, menus: MenuItem[]) {
     state.menuList = menus
