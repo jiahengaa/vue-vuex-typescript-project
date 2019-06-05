@@ -1,5 +1,0 @@
-export const selectedMenu: string = 'selectedMenu'
-export const initMenuList: string = 'initMenuList'
-export const addMenuToList: string = 'addMenuToList'
-export const rmMenuItemFromList: string = 'rmMenuItemFromList'
-export const updateMenuItem: string = 'updateMenuItem'

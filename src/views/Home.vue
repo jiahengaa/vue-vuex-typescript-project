@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <grace-tab></grace-tab>
+    <v-pluginselect></v-pluginselect>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
-import GraceTab from '@/components/GraceTab.vue'
+import pluginSelect from '../components/PluginSelect.vue'
 
 @Component({
-  name: 'selfTabPage',
+  name: 'home',
   components: {
-    'grace-tab': GraceTab
+    'v-pluginselect': pluginSelect,
   }
 })
 export default class Home extends Vue {}
@@ -20,6 +20,6 @@ export default class Home extends Vue {}
 
 <style lang="scss" scoped>
 .home {
-  // overflow: hidden;
+  display: flex;
 }
 </style>
