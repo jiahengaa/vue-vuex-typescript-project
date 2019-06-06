@@ -13,13 +13,10 @@
             <a href="#/home">插件库</a>
           </li>
           <li>
-            <a href="#">预览项目</a>
+            <a href="#/setProjectPath">指定路径</a>
           </li>
           <li>
-            <a href="#">指定路径</a>
-          </li>
-          <li>
-            <a href="#">生成项目</a>
+            <a href="#/createProjectPage">生成项目</a>
           </li>
           <li>
             <a href="#">Git管理</a>
@@ -109,7 +106,7 @@ $white-off: #dfdbd9;
   text-align: center;
   padding: 0;
   margin: 0;
-  -webkit-app-region:drag;
+  -webkit-app-region: drag;
 
   a {
     display: block;
@@ -132,7 +129,7 @@ $white-off: #dfdbd9;
   }
 }
 
-.nav-wrap{
+.nav-wrap {
   width: 300px;
   // MAIN NAV
   .main-nav {
@@ -221,6 +218,5 @@ $white-off: #dfdbd9;
     }
   }
 }
-
 </style>
 
