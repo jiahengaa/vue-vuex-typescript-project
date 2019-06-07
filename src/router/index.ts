@@ -4,6 +4,7 @@ import homeRouter from './moudules/homeRouter'
 import uploadRouter from './moudules/uploadRouter'
 import setProjectPathRouter from './moudules/setProjectPathRouter'
 import createProjectPageRouter from './moudules/createProjectPageRouter'
+import bsAddRouter from './moudules/bsAddRouter'
 import VueRouter from 'vue-router'
 
 Vue.use(Router)
@@ -17,7 +18,8 @@ const routes = [
   homeRouter,
   uploadRouter,
   setProjectPathRouter,
-  createProjectPageRouter
+  createProjectPageRouter,
+  bsAddRouter
 ]
 
 const router = new VueRouter({
