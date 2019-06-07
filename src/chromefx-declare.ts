@@ -1,8 +1,10 @@
 import { FileState } from './model/UploadPageState'
+import Vue from 'vue'
+import { ModelProcess } from './model/CreateProjectPageState'
 
 declare global {
   interface Window {
-    vm: object
+    vm: Vue
     pluginPageActions: {
       createProjectJson: (projectCreateJson: string) => void
       loadFuncs: (engin: string, version: string, querystr: string) => void
@@ -22,6 +24,7 @@ declare global {
     createProjectActions: {
       startProcess: (modelListStr: string) => void
       loadMoudels: () => void
+      refreshUpload: (id: string, percent: number) => void
     }
   }
 }

@@ -31,7 +31,7 @@
           <a href="#">点赞</a>
         </li>
         <li>
-          <a href="#">需求</a>
+          <a href="#/bsAddPage">需求</a>
         </li>
         <li>
           <a href="#" @click="handleQuit">退出</a>

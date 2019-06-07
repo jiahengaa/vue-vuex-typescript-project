@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { CreateProjectPageState } from '../model/CreateProjectPageState'
+import { CreateProjectPageState, ModelProcess } from '../model/CreateProjectPageState'
 import { PluginPageState, FuncModel, Engin, Version, Project, ProjectCreateMoudle } from '../model/PluginPageState'
 import { Showtype, MessageType } from '@/model/Message'
 import MessageHelper from '@/util/MessageHelper'
@@ -51,8 +51,13 @@ export default class CreateProjectPage extends Vue {
       this.state = data
       MessageHelper.MessageInstance.Message(this, data.Message)
     })
-
     window.createProjectActions.loadMoudels()
+
+    window.createProjectActions.refreshUpload = this.printbb
+  }
+
+  public printbb(id: string, percent: number) {
+    const model = ((this.state.Models.find(p => p.Id === id) as ModelProcess).Percent = percent)
   }
 }
 </script>
