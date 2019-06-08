@@ -4,6 +4,10 @@
 
 - 安装淘宝 cnpm
 
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
 ### Add New Page
 
 - 在 scripts/vues.conf.json 配置文件中新增要添加的页面，然后执行以下命令
