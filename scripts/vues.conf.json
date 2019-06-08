@@ -1,0 +1,8 @@
+{
+  "views": [
+    {
+      "name": "HelloWorld",
+      "exsitNotPrint": true
+    }
+  ]
+}
