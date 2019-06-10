@@ -25,6 +25,7 @@ declare global {
       startProcess: (modelListStr: string) => void
       loadMoudels: () => void
       refreshUpload: (id: string, percent: number) => void
+      refreshUnzipedState: (id: string, unzipedState: string) => void
     }
   }
 }

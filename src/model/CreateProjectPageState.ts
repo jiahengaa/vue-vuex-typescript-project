@@ -17,4 +17,5 @@ export interface ModelProcess {
   DownloadPath: string
   Id: string
   Des: string
+  UnzipedState: string
 }

@@ -21,6 +21,21 @@
           ></el-progress>
         </template>
       </el-table-column>
+      <el-table-column label="解压" width="auto">
+        <template slot-scope="scope">
+          <div>
+            <i class="el-icon-finished" v-show="true"></i>
+          </div>
+          <div
+            v-show="scope.row.UnzipedState===`start`"
+            v-loading="true"
+            element-loading-text="拼命解压中"
+            element-loading-spinner="el-icon-loading"
+            element-loading-background="rgba(255, 255, 255, 1)"
+            style="width: 100%;height: 70px;"
+          ></div>
+        </template>
+      </el-table-column>
     </el-table>
   </div>
 </template>
@@ -53,11 +68,16 @@ export default class CreateProjectPage extends Vue {
     })
     window.createProjectActions.loadMoudels()
 
-    window.createProjectActions.refreshUpload = this.printbb
+    window.createProjectActions.refreshUpload = this.refreshUpload
+    window.createProjectActions.refreshUnzipedState = this.refreshUnzipedState
   }
 
-  public printbb(id: string, percent: number) {
+  public refreshUpload(id: string, percent: number) {
     const model = ((this.state.Models.find(p => p.Id === id) as ModelProcess).Percent = percent)
+  }
+
+  public refreshUnzipedState(id: string, unzipedState: string) {
+    const model = ((this.state.Models.find(p => p.Id === id) as ModelProcess).UnzipedState = unzipedState)
   }
 }
 </script>
