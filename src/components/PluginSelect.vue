@@ -97,7 +97,6 @@ import { Component, Vue } from 'vue-property-decorator'
 import { PluginPageState, FuncModel, Engin, Version, Project, ProjectCreateMoudle } from '../model/PluginPageState'
 import { FileState } from '@/model/UploadPageState'
 import { RenderPlugin, RenderProject } from '@/model/RenderPlugin'
-import { publicEncrypt } from 'crypto'
 import { MessageType, Showtype } from '../model/Message'
 import MessageHelper from '@/util/MessageHelper'
 
